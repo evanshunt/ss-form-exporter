@@ -1,0 +1,21 @@
+{
+    "name": "evans-hunt/ss-form-exporter",
+    "description": "A SilverStripe dev task for exporting userform data to CSV",
+    "type": "library",
+    "require": {
+        "silverstripe/framework": "^3",
+        "silverstripe/cms": "^3"
+    },
+    "authors": [
+        {
+            "name": "David Toews",
+            "email": "davejtoews@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "": "src/"
+        }
+    }
+}
