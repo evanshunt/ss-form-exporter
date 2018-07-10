@@ -1,7 +1,7 @@
 <?php
 
-class ExportUserFormToCSV extends BuildTask {
-    protected $title = "Export CSVs to file";
+class ExportUserFormToCsv extends BuildTask {
+    protected $title = "Export User Form data to CSV";
     protected $description = "Generates a CSV from form submissions for a given 'form-id'";
 
     public function run($request) {
