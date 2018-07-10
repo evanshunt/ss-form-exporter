@@ -1,5 +1,5 @@
 {
-    "name": "evans-hunt/ss-form-exporter",
+    "name": "evanshunt/ss-form-exporter",
     "description": "A SilverStripe dev task for exporting userform data to CSV",
     "type": "library",
     "require": {
