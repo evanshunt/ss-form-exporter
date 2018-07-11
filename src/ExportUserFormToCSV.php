@@ -32,7 +32,7 @@ class ExportUserFormToCsv extends BuildTask {
 
             echo "exported to csvs/contact-submissions.csv\n";            
         } else {
-            echo "missing 'form-id' argument."
+            echo "missing 'form-id' argument.";
         }
     }
 }
