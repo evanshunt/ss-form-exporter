@@ -13,5 +13,8 @@
             "email": "davejtoews@gmail.com"
         }
     ],
+    "autoload": {
+        "classmap": ["code/Tasks/ExportUserFormToCsv.php"]
+    },
     "minimum-stability": "dev"
 }
