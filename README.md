@@ -21,3 +21,7 @@ URL:
 CLI:
   
     php framework/cli-script.php dev/build/ExportUserFormToCsv form-id={YOUR_FORM_ID}
+
+## Notes
+
+This task may fail if the fields currently defined for the Form do not match the submitted entries.
