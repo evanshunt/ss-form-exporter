@@ -2,6 +2,7 @@
     "name": "evanshunt/ss-form-exporter",
     "description": "A SilverStripe dev task for exporting userform data to CSV",
     "type": "silverstripe-module",
+    "keywords": ["silverstripe"],
     "require": {
         "silverstripe/framework": "^3",
         "silverstripe/cms": "^3"
