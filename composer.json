@@ -13,10 +13,5 @@
             "email": "davejtoews@gmail.com"
         }
     ],
-    "autoload" : {
-        "psr-4": {
-            "EvansHunt\\SsFormExporter\\": "code/tasks"
-        }
-    },
     "minimum-stability": "dev"
 }
