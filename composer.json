@@ -1,7 +1,7 @@
 {
     "name": "evanshunt/ss-form-exporter",
     "description": "A SilverStripe dev task for exporting userform data to CSV",
-    "type": "library",
+    "type": "silverstripe-module",
     "require": {
         "silverstripe/framework": "^3",
         "silverstripe/cms": "^3"
@@ -12,10 +12,5 @@
             "email": "davejtoews@gmail.com"
         }
     ],
-    "minimum-stability": "dev",
-    "autoload": {
-        "psr-0": {
-            "ExportUserFormToCsv": "code/"
-        }
-    }
+    "minimum-stability": "dev"
 }
