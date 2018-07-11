@@ -1,4 +1,5 @@
 <?php
+namespace EvansHunt\SsFormExporter;
 
 class ExportUserFormToCsv extends BuildTask {
     protected $title = "Export User Form data to CSV";
