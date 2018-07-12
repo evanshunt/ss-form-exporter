@@ -22,6 +22,12 @@ CLI:
   
     php framework/cli-script.php dev/build/ExportUserFormToCsv form-id={YOUR_FORM_ID}
 
+### Date Range
+
+Two additional parameters `before` and `after` can be used to narrow your search to specific dates. These both accept date strings according to the rules of PHP's [`strtotime`](https://secure.php.net/manual/en/function.strtotime.php). Eg. `m/d/y`, `d-m-y`, or `YYYY-MM-DD`.
+
+One or both parameters can be used in order to narrow the range.
+
 ## Notes
 
 This task may fail if the fields currently defined for the Form do not match the submitted entries.
