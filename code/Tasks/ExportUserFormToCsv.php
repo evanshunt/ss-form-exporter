@@ -5,6 +5,8 @@ class ExportUserFormToCsv extends BuildTask {
 
     public function run($request) {
 
+        ini_set('memory_limit','512M');
+
         if(isset($_GET['form-id'])) {
             $submitted = SubmittedForm::get()->filter(['ParentID' => $_GET['form-id']]);
 
