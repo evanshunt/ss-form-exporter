@@ -8,7 +8,25 @@ class ExportUserFormToCsv extends BuildTask {
         ini_set('memory_limit','512M');
 
         if(isset($_GET['form-id'])) {
-            $submitted = SubmittedForm::get()->filter(['ParentID' => $_GET['form-id']]);
+            $parentID = $_GET['form-id'];
+
+            $page = Page::get()->byID($parentID);
+
+			$columnSQL = <<<SQL
+SELECT "Name", "Title"
+FROM "SubmittedFormField"
+LEFT JOIN "SubmittedForm" ON "SubmittedForm"."ID" = "SubmittedFormField"."ParentID"
+WHERE "SubmittedForm"."ParentID" = '$parentID'
+ORDER BY "Title" ASC
+SQL;
+			// Sanitise periods in title
+			$columns = array();
+			foreach(DB::query($columnSQL)->map() as $name => $title) {
+				$columns[$name] = trim(strtr($title, '.', ' '));
+            }
+            $columns['Created'] = 'Created';
+
+            $submitted = $page->Submissions();
 
             if (isset($_GET['before'])) {
                 $timestampBefore = strtotime($_GET['before']);
@@ -22,20 +40,10 @@ class ExportUserFormToCsv extends BuildTask {
                 $submitted = $submitted->filter(['Created:GreaterThan' => $dateTimeAfter]);
             }
 
-            $fields = EditableFormField::get()->filter(['ParentID' => $_GET['form-id']]);
             $gridField = new GridField('Submission', 'Submissions', $submitted);
             $exportButton = new GridFieldExportButton();
      
-            $exportColumns = [
-                'ID' => 'Submission ID',
-                'Created' => 'Created'
-            ];
-            
-            foreach ($fields as $field) {
-                $exportColumns[$field->Name] = $field->Title;
-            }
-
-            $exportButton->setExportColumns($exportColumns);
+            $exportButton->setExportColumns($columns);
             $exportData = $exportButton->generateExportFileData($gridField);
 
             if (!is_dir('../csvs/')) {
