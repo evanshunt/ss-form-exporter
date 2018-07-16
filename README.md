@@ -20,7 +20,7 @@ URL:
 
 CLI:
   
-    php framework/cli-script.php dev/build/ExportUserFormToCsv form-id={YOUR_FORM_ID}
+    php framework/cli-script.php dev/tasks/ExportUserFormToCsv form-id={YOUR_FORM_ID}
 
 ### Date Range
 
